@@ -1,6 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    min-width: 300px;
+}
+
+
+
+#divQuadro{
+    width: 100%;
+}
+
 h1{
     border-bottom-style: inset;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1rem;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.3rem;
+    width: 100%;
+}
+
+.tarefa-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inTarefa{
+    width: 90%;
+    height: 30px;
+    outline: none;
+}
+
+.buttons{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 80%;
+}
+
+.btAdicionar{
+    border: none;
+    background: blue;
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#btSelecionar{
+    border: none;
+    background: rgb(255, 153, 0);
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#btRetirar{
+    border: none;
+    background: rgb(255, 98, 0);
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#btGravar{
+    border: none;
+    background: rgb(255, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+
+
 
 .tarefa-selecionada{
     color: red;
@@ -9,4 +107,46 @@ h1{
 
 .tarefa-normal{
     color: black;
+}
+
+h5{
+    margin-top: 1rem;
+    font-size: 16px;
+    text-align: center;
+}
+
+h5 + h5{
+    margin-top: 1rem;
+}
+
+@media (min-width: 900px){
+   .container{
+     height: 100vh;
+     flex-direction: row;
+     align-items: start;
+     justify-content: space-evenly;
+   }
+
+   img{
+    margin-top: 2rem;
+    width: 600px;
+   }
+
+   #divQuadro{
+    margin-top: 2rem;
+    width: 50%;
+   }
+
+   .buttons{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+   }
+
+   h5{
+    text-align: start;
+    font-size: 30px;
+    margin-top: 4rem;
+   }
+
 }
