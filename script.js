@@ -13,7 +13,7 @@ frm.addEventListener("submit", (e) =>{
 
     frm.inTarefa.value = "";
     frm.inTarefa.focus();
-})
+});
 
 frm.btSelecionar.addEventListener("click", () =>{
     const tarefas = document.querySelectorAll("h5");
@@ -39,4 +39,4 @@ frm.btSelecionar.addEventListener("click", () =>{
     }
 
     tarefas[aux + 1].className = "tarefa-selecionada"
-})
+});
