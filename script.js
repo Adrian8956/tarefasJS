@@ -63,3 +63,39 @@ frm.btRetirar.addEventListener("click", () =>{
         dvQuadro.removeChild(tarefas[aux]);
     }
 })
+
+frm.btGravar.addEventListener("click", () =>{
+    const tarefas = document.querySelectorAll("h5");
+
+    if(tarefas.length == 0){
+        alert("Não há tarefas para serem salvas");
+        return;
+    }
+
+    let dados = "";
+    tarefas.forEach(tarefa =>{
+        dados += tarefa.innerText + ";";
+    })
+
+    //grava os dados em localstorage, removendo o ultimo ";"
+    localStorage.setItem("tarefasDia", dados.slice(0, -1));
+
+    //confere se dados foram armazenados em localstorage
+    if(localStorage.getItem("tarefasDia")){
+        alert("ok! tarefas Salvas");
+    }
+})
+
+window.addEventListener("load", () =>{
+    // verifica se há tarefas salvas no navegador do usuário 
+    if(localStorage.getItem("tarefasDia")){
+        const dados = localStorage.getItem("tarefasDia").split(";");
+        
+        dados.forEach(dado => {
+            const h5 = document.createElement("h5");
+            const texto = document.createTextNode(dado);
+            h5.appendChild(texto);
+            dvQuadro.appendChild(h5);
+        })
+    }
+})
