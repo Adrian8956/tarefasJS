@@ -14,3 +14,29 @@ frm.addEventListener("submit", (e) =>{
     frm.inTarefa.value = "";
     frm.inTarefa.focus();
 })
+
+frm.btSelecionar.addEventListener("click", () =>{
+    const tarefas = document.querySelectorAll("h5");
+
+    if(tarefas.length == 0){
+        alert("Não há tarefas para selecionar");
+        return;
+    }
+
+    let aux = -1;
+
+    for(let i = 0; i < tarefas.length; i++){
+        // se a tag é da class tarefa-selecionada (esta selecionada)
+        if(tarefas[i].className == "tarefa-selecionada"){
+            tarefas[i].className = "tarefa-normal";
+            aux = i;
+            break;
+        }
+    }
+
+    if(aux == tarefas.length - 1){
+        aux = -1;
+    }
+
+    tarefas[aux + 1].className = "tarefa-selecionada"
+})
